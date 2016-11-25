@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CallDaemon</string>
+    <string name="number_tw_text">Number:</string>
+    <string name="delay_tv_text">Delay (s):</string>
+    <string name="number_tv_text">Phone number:</string>
+    <string name="call_button_text">Call</string>
+    <string name="stop_button_text">Stop</string>
+</resources>
