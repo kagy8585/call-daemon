@@ -23,12 +23,25 @@
             android:text="@string/number_tv_text"
             android:id="@+id/numberTV" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/numberET" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/numberET" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_button_text"
+                android:id="@+id/pickButton"
+                android:onClick="onPickClick" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"

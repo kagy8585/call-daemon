@@ -1,2 +1,4 @@
 # call-daemon
-Simple automtic recall application for Android
+Simple application for automatic repeated calls.
+The main purpose of this application is to reach busy
+call centers, without pressing the call button again and again.
