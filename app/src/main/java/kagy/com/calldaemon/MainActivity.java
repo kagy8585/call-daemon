@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * The main activity of the application.
+ */
 public class MainActivity extends AppCompatActivity {
 
     //the minimum delay expressed in seconds
@@ -42,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         delay=MIN_DELAY;
     }
 
+    /**
+     * The on click method of the start button.
+     * @param v this should always be the startButton.
+     */
     public void onStartClick(View v) {
         if (!started) {
             started = true;
@@ -50,11 +57,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * The on clock method of the stop button.
+     * @param v this should always be the stopButton.
+     */
     public void onStopClick(View v){
         if (started)
             started=false;
     }
 
+    /**
+     * Starts a call in an asynchronous manner.
+     */
     private void startCall() {
 
         EditText numberET=(EditText)findViewById(R.id.numberET);
@@ -75,6 +89,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Method for intent result handling.
+     * @param requestCode is the constant code of the Intent.
+     * @param resultCode is the result code of the Intent.
+     * @param data is the refrence of the Intent.
+     */
     @Override
     public void onActivityResult (int requestCode,
                            int resultCode,
