@@ -5,5 +5,5 @@
     <string name="number_tv_text">Phone number:</string>
     <string name="call_button_text">Call</string>
     <string name="stop_button_text">Stop</string>
-    <string name="pick_button_text">Pick</string>
+    <string name="pick_button_text">Contacts</string>
 </resources>

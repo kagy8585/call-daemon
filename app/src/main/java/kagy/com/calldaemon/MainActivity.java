@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         started = false;
         delay = MIN_DELAY;
+        setDelayText(delay);
     }
 
     /**
@@ -175,9 +176,10 @@ public class MainActivity extends AppCompatActivity {
 
         //only the call reqest code is needed to be verified
         switch (requestCode) {
-            case PICK_CONTACT_CODE:
-                onPickActivityResult(data);
-                break;
+            case PICK_CONTACT_CODE: {
+                if (data!=null) //to avoid the exit from activity
+                    onPickActivityResult(data);
+            } break;
             case CALL_INTENT_CODE:
                 onCallActivityResult();
                 break;
@@ -210,5 +212,15 @@ public class MainActivity extends AppCompatActivity {
         if (delay < MIN_DELAY)
             delay = MIN_DELAY;
         return delay;
+    }
+
+    /**
+     * Sets the delay shown on the interface.
+     * @param newDelay is the new vaue of the delay.
+     */
+    private void setDelayText(int newDelay) {
+        EditText delayET = (EditText) findViewById(R.id.delayED);
+
+        delayET.setText(Integer.toString(newDelay));
     }
 }
