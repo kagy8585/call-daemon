@@ -95,20 +95,27 @@ public class MainActivity extends AppCompatActivity {
     private void startCall() {
 
         EditText numberET = (EditText) findViewById(R.id.numberET);
-        //the indentifier of the called phone
-        String uri = "tel:" + numberET.getText();
-        //creating and configuring the intent
-        Intent intent = new Intent(Intent.ACTION_CALL);
+        String phoneNumber=numberET.getText().toString();
 
-        intent.setData(Uri.parse(uri));
-        //u[dating the delay
-        delay = extractDelay();
-        //launching the intent
-        try {
-            startActivityForResult(intent, CALL_INTENT_CODE);
-        } catch (SecurityException e) {
-            Toast.makeText(this, "Not allowed!", Toast.LENGTH_SHORT).show();
+        //verifying that a phone number is entered
+        if (phoneNumber.length()>0) {
+            //the identifier of the called phone
+            String uri = "tel:" + phoneNumber;
+            //creating and configuring the intent
+            Intent intent = new Intent(Intent.ACTION_CALL);
+
+            intent.setData(Uri.parse(uri));
+            //u[dating the delay
+            delay = extractDelay();
+            //launching the intent
+            try {
+                startActivityForResult(intent, CALL_INTENT_CODE);
+            } catch (SecurityException e) {
+                Toast.makeText(this, "Not allowed!", Toast.LENGTH_SHORT).show();
+            }
         }
+        else //error message if the phone number is nothing
+            Toast.makeText(this, "Please enter phone number.", Toast.LENGTH_LONG).show();
     }
 
     //The intent activity results ahndler methods
